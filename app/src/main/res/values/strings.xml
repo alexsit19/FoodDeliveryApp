@@ -13,4 +13,7 @@
     <string name="profile">Профиль</string>
     <string name="basket">Корзина</string>
     <string name="banner">Баннер</string>
+    <string name="mock_price">от 345 р</string>
+    <string name="mock_title">title</string>
+    <string name="mock_text">sdgsdfgsdfgsdfg sdfgsdfgsdfg dfgsdfgsdfg sdfgsdfgsdfg sdffgsdfgsdfg sdfgsdfgsdfg</string>
 </resources>
