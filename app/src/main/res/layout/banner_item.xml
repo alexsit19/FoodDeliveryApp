@@ -14,9 +14,9 @@
     <ImageView
         android:id="@+id/bannerImageView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         android:contentDescription="@string/banner"
-        android:scaleType="fitXY"/>
+        android:scaleType="centerCrop"/>
 
     </androidx.cardview.widget.CardView>
 </FrameLayout>
