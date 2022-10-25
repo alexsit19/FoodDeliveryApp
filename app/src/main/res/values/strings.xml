@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Food Delivery App</string>
-    <string name="moskow">Москва</string>
     <string name="qr_code_description_image">qr_code</string>
     <string name="pizza">Пицца</string>
     <string name="combo">Комбо</string>
