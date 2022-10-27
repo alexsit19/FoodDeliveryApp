@@ -4,9 +4,15 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.fooddeliveryapp.BuildConfig
+import com.example.fooddeliveryapp.data.DefaultRepository
 import com.example.fooddeliveryapp.databinding.ActivityMainBinding
 import com.example.fooddeliveryapp.databinding.ActivityMainBinding.inflate
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.io.IOException
 
 
@@ -20,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         _binding = inflate(layoutInflater)
         setContentView(binding.root)
         setupUi()
-
     }
 
     @Throws(IOException::class)

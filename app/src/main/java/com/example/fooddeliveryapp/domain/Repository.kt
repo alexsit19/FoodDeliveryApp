@@ -1,5 +1,8 @@
 package com.example.fooddeliveryapp.domain
 
 interface Repository {
-    fun fetchBanners(path: String)
+    suspend fun getMeals(category: String): List<Meal>
+
+    suspend fun getMeal(id: Long): Meal
+
 }
