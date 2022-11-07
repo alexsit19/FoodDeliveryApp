@@ -5,4 +5,9 @@ interface Repository {
 
     suspend fun getMeal(id: Long): Meal
 
+    suspend fun addToFavorite(meal: Meal)
+
+    suspend fun deleteFromFavorite(meal: Meal)
+
+    suspend fun getMealsFromFavorite(): List<Meal>
 }

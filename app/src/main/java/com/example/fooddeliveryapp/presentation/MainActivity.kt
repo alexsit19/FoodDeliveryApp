@@ -2,13 +2,14 @@ package com.example.fooddeliveryapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.fooddeliveryapp.R
+import com.example.fooddeliveryapp.data.DefaultRepository
 import com.example.fooddeliveryapp.databinding.ActivityMainBinding
 import com.example.fooddeliveryapp.databinding.ActivityMainBinding.inflate
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,8 +29,14 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val bottomNavigation = binding.bottomNavigation
         bottomNavigation.setupWithNavController(navController)
+        val rep = DefaultRepository()
 
-        //setupUi()
+        lifecycleScope.launch {
+            val list = rep.getMeals("beef")
+            println(list)
+        }
+            //setupUi()
+        }
     }
 
 //    @Throws(IOException::class)
@@ -57,4 +64,3 @@ class MainActivity : AppCompatActivity() {
 //
 //
 //    }
-}

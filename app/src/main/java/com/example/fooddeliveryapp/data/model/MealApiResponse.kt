@@ -1,7 +1,9 @@
 package com.example.fooddeliveryapp.data.model
 
+import com.example.fooddeliveryapp.domain.Meal
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import okhttp3.internal.immutableListOf
 
 @JsonClass(generateAdapter = true)
 data class MealApiResponse(
@@ -36,4 +38,13 @@ data class MealRemote(
     @Json(name = "strIngredient18") val ingredient18: String?,
     @Json(name = "strIngredient19") val ingredient19: String?,
     @Json(name = "strIngredient20") val ingredient20: String?,
-)
+) {
+    fun toMeal(): Meal {
+        val id: Long = id as Long
+        val country: String = country ?: ""
+        val mealImageUrl: String = mealImage ?: ""
+        val instructions: String = instructions ?: ""
+        val title: String = title ?: ""
+        return Meal(id, title, instructions, country, mealImageUrl)
+    }
+}

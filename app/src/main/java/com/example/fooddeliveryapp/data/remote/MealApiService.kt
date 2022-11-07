@@ -5,6 +5,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -17,10 +18,10 @@ private const val BASE_URL = "https://www.themealdb.com/api/json/v1/1/"
 interface MealApiService {
 
     @GET("filter.php")
-    suspend fun getMealsByCategory(@Query("c") category: String): MealApiResponse
+    suspend fun getMealsByCategory(@Query("c") category: String): Response<MealApiResponse>
 
     @GET("lookup.php")
-    suspend fun getMealById(@Query("i") id: Long): MealApiResponse
+    suspend fun getMealById(@Query("i") id: Long): Response<MealApiResponse>
 
 }
 
